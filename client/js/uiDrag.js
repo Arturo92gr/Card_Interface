@@ -10,7 +10,7 @@ export const uiDrag = {
 
                 // Permitir arrastrar solo si el palo coincide o es la baraja
                 if (containerPalo === cardPalo || container.classList.contains('baraja')) {
-                    event.preventDefault(); // Permite soltar
+                    event.preventDefault();
                     event.dataTransfer.dropEffect = "move";
                 } else {
                     // No permitir soltar
@@ -26,7 +26,7 @@ export const uiDrag = {
                 var containerPalo = container.dataset.palo;
 
                 if (containerPalo === cardPalo || container.classList.contains('baraja')) {
-                    event.preventDefault(); // Permite soltar
+                    event.preventDefault();
                     var rect = container.getBoundingClientRect();
                     var offsetX = event.clientX - rect.left;
                     var offsetY = event.clientY - rect.top;
@@ -39,7 +39,7 @@ export const uiDrag = {
                         container.appendChild(draggedElement);
                     }
                 } else {
-                    // No hacer nada, impedir el drop
+                    // No hacer nada, impide el drop
                 }
             });
         });

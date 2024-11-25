@@ -1,15 +1,9 @@
 import { uiDrag } from "./uiDrag.js";
 import { Card } from "./Card.js";
 
+// Inicializar la baraja
 const baraja = document.querySelector('.baraja');
+Card.dealCards(baraja);
 
-const palos = ['oros', 'espadas', 'copas', 'bastos'];
-palos.forEach(palo => {
-    for (let numero = 1; numero <= 12; numero++) {
-        const card = new Card(numero, palo);
-        baraja.appendChild(card.element);
-    }
-});
-
-// Permitir el arrastre dentro del contenedor
+// Inicializar el sistema de arrastre
 uiDrag.init(".contenedor, .baraja", ".card");
